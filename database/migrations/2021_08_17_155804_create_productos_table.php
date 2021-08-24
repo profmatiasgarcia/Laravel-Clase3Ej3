@@ -21,7 +21,9 @@ class CreateProductosTable extends Migration
             $table->integer('cantidad');
             $table->float('precio');
             $table->string('proveedor');
-            $table->integer('categoria_id')->default(1);
+           // $table->integer('categoria_id')->default(1);
+            //unsigned para poder agregar la FK
+            $table->integer('categoria_id')->unsigned();
             $table->timestamps();
         });
     }

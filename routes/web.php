@@ -3,9 +3,9 @@
 Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU según es publicada por la Free Software Foundation, bien con la versión 3 de dicha Licencia o bien (según su elección) con cualquier versión posterior. Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de GNU para más detalles.
 Debería haber recibido una copia de la Licencia Pública General junto con este programa. Si no ha sido así ingrese a -http://www.gnu.org/licenses/-*/
 
-Route::get('/', 'ProductoController@listar');
+Route::view('/', 'welcome');
 
-Route::get('/productos', 'ProductoController@listar');
+Route::get('/productos', 'ProductoController@listar')->name('inicio');;
 
 Route::get('/productos/mostra/{id}', 'ProductoController@mostra')->where('id', '[0-9]+')->name('mostrar');
 
@@ -22,3 +22,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*
+    Con resource podemos generar las rutas para cierto Controller, en este caso, para artículos
+    Primer parámetro: nombre de la ruta, segundo parámetro: nombre del controlador
+    Con php artisan route:list podemos ver todas las rutas con su información
+*/
+Route::resource('articulos','ProductoController');
+Route::resource('categorias','CategoriaController');
