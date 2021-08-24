@@ -10,6 +10,8 @@ class CreateCategoriasTable extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             //$table->id();
+            /*Tuve que modificar el engine para agregar las foreign key*/
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre');
             $table->timestamps();

@@ -15,6 +15,8 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             //$table->id();
+            /*Tuve que modificar el engine para agregar las foreign key*/
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');

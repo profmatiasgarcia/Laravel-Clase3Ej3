@@ -2,6 +2,7 @@
 ## Ejemplo 3 del Tutorial de Laravel Framework Clase 3
 
   * CRUD ejemplo de Stock
+  * CRUD ejemplo de inventario
 
 ## Como instalar y utilizar este ejemplo
 
