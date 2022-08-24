@@ -8,7 +8,7 @@
 
 1. Instalar paquetes o dependencias, desde la terminal de VS Code o del OS estando en la carpeta del proyecto tipear
 ```bash
-composer install
+composer install --ignore-platform-reqs
 ``` 
 ```bash
 composer update
